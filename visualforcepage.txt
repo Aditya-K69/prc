@@ -1,0 +1,23 @@
+<!-- The 'controller' attribute links this page to our Apex class -->
+<apex:page controller="SimpleContactManager" docType="html-5.0">
+    <apex:form >
+        <!-- This tag displays the success or error messages generated in our Apex code -->
+        <apex:pageMessages />
+        
+        <apex:pageBlock title="Create Quick Contact">
+            
+            <apex:pageBlockSection columns="1">
+                <!-- These inputs bind exactly to the variables in the Apex class using {! } syntax -->
+                <apex:inputText value="{!firstName}" label="First Name" />
+                <apex:inputText value="{!lastName}" label="Last Name" required="true" />
+                <apex:input type="email" value="{!email}" label="Email Address" />
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons location="bottom">
+                <!-- The action attribute tells Salesforce to run the saveRecord() Apex method -->
+                <apex:commandButton action="{!saveRecord}" value="Save Contact" />
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

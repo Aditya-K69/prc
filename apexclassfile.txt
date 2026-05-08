@@ -1,0 +1,36 @@
+public class SimpleContactManager {
+    // Variables to hold the input from the user interface
+    public String firstName { get; set; }
+    public String lastName { get; set; }
+    public String email { get; set; }
+
+    // This method is called when the user clicks the 'Save' button
+    public PageReference saveRecord() {
+        try {
+            // Create a new Contact record in memory
+            Contact newContact = new Contact(
+                FirstName = firstName,
+                LastName = lastName,
+                Email = email
+            );
+            
+            // The 'insert' keyword commits the record to the Salesforce database
+            insert newContact;
+            
+            // Clear the form fields after a successful save
+            firstName = '';
+            lastName = '';
+            email = '';
+            
+            // Show a success message on the screen
+            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.CONFIRM, 'Contact created successfully!'));
+            
+        } catch (Exception e) {
+            // If something goes wrong (e.g., missing a required field), show an error
+            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'Error: ' + e.getMessage()));
+        }
+        
+        // Return null to stay on the same page
+        return null;
+    }
+}

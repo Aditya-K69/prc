@@ -4,7 +4,8 @@ def prim(V, adj):
 
     visited = [False] * V
 
-    pq = [(0, 0)]
+    pq = [(0, 0, -1)]  
+    # (weight, node, parent)
 
     total_cost = 0
 
@@ -12,21 +13,21 @@ def prim(V, adj):
 
     while pq:
 
-        weight, node = heapq.heappop(pq)
+        weight, node, parent = heapq.heappop(pq)
 
         if visited[node]:
             continue
 
         visited[node] = True
-
         total_cost += weight
 
-        print(node, "->", weight)
+        if parent != -1:
+            print(parent, "-", node, "=", weight)
 
         for neighbor, cost in adj[node]:
 
             if not visited[neighbor]:
-                heapq.heappush(pq, (cost, neighbor))
+                heapq.heappush(pq, (cost, neighbor, node))
 
     print("Total Cost =", total_cost)
 

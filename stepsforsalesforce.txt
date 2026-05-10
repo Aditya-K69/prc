@@ -25,7 +25,7 @@ This Apex class will act as the "Controller." It holds the variables the user ty
 3. Replace the generated code with the following:
 
 ```apex
-public class SimpleContactManager {
+public class SimpleContactManager {q
     // Variables to hold the input from the user interface
     public String firstName { get; set; }
     public String lastName { get; set; }

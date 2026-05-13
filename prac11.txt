@@ -1,0 +1,517 @@
+﻿Pracs and Datasets
+Pracs and Datasets
+
+
+1.Data Wrangling, I
+Perform the following operations using Python on any open source dataset (e.g., data.csv) : Any dataset
+
+
+2.Data Wrangling II
+Create an “Academic performance” dataset of students and perform the following operations using
+Python. : Student 
+
+
+3.Descriptive Statistics - Measures of Central Tendency and variability
+Perform the following operations on any open source dataset (e.g., data.csv) : Any dataset
+
+
+4.Data Analytics I
+Create a Linear Regression Model using Python/R to predict home prices using Boston Housing. : Boston
+
+
+5.Data Analytics II
+1. Implement logistic regression using Python/R to perform classification on
+Social_Network_Ads.csv dataset.: Social networks ads
+
+
+6.Data Analytics III
+1. Implement Simple Naïve Bayes classification algorithm using Python/R on iris.csv dataset.
+2. Compute Confusion matrix to find TP, FP, TN, FN, Accuracy, Error rate, Precision, Recall
+on the given dataset. : IRIS
+
+
+7.Text Analytics
+1. Extract Sample document and apply following document preprocessing methods:
+Tokenization, POS Tagging, stop words removal, Stemming and Lemmatization.: No dataset
+
+
+8.Data Visualization I
+1. Use the inbuilt dataset 'titanic'. The dataset contains 891 rows and contains information
+about the passengers who boarded the unfortunate Titanic ship. Use the Seaborn library to
+see if we can find any patterns in the data.
+2. Write a code to check how the price of the ticket (column name: 'fare') for each passenger
+is distributed by plotting a histogram. : Titanic
+
+
+9.Data Visualization II
+1. Use the inbuilt dataset 'titanic' as used in the above problem. Plot a box plot for distribution
+of age with respect to each gender along with the information about whether they survived
+or not. (Column names : 'sex' and 'age') : Titanic
+
+
+10.Data Visualization III
+Download the Iris flower dataset or any other dataset into a DataFrame. 
+ IRIS
+IRIS DATASET
+IRIS DATASET
+
+
+import pandas as pd
+import numpy as np
+
+
+data = {
+
+
+    'SepalLength':[5.1,4.9,4.7,5.0,5.4,6.4,6.9,5.5,6.5,7.2,6.7,np.nan],
+
+
+    'SepalWidth':[3.5,3.0,3.2,3.6,3.9,3.2,3.1,2.3,3.0,3.6,20.0,3.0],
+
+
+    'PetalLength':[1.4,1.4,1.3,1.4,1.7,4.5,4.9,4.0,5.8,6.1,np.nan,5.1],
+
+
+    'PetalWidth':[0.2,0.2,0.2,0.2,0.4,1.5,1.5,1.3,2.2,2.5,2.1,np.nan],
+
+
+    'Species':[
+        'setosa','setosa','setosa','setosa','Setosa',
+        'versicolor','versicolor','versicolor',
+        'virginica','virginica','Virginica','virginica'
+    ]
+}
+
+
+df = pd.DataFrame(data)
+
+
+# Save dataset as CSV
+df.to_csv("iris_custom.csv", index=False)
+
+
+print("CSV Created Successfully")
+
+
+# Display dataset
+print(df)
+
+
+
+
+BOSTON HOUSING
+BOSTON HOUSING
+
+
+import pandas as pd
+import numpy as np
+
+
+data = {
+
+
+    'CrimeRate':[0.10,0.25,0.05,0.30,0.15,1.20,0.45,0.60,5.00,0.80,0.12,np.nan],
+
+
+    'Pollution':[0.53,0.47,0.45,0.52,0.40,0.70,0.60,0.65,0.90,0.58,np.nan,0.50],
+
+
+    'Rooms':[6.57,6.42,7.18,5.63,6.90,5.00,6.10,5.80,3.50,6.20,15.0,6.00],
+
+
+    'HouseAge':[65.2,78.9,54.3,88.5,45.0,96.0,72.1,80.5,100.0,68.4,50.2,np.nan],
+
+
+    'Distance':[4.09,3.50,5.20,2.80,6.00,1.50,3.00,2.10,1.00,4.50,5.80,3.90],
+
+
+    'Tax':[296,242,222,311,280,666,400,500,711,350,280,np.nan],
+
+
+    'StudentTeacherRatio':[15.3,17.8,18.7,16.5,15.0,20.2,19.1,18.5,22.0,17.0,16.0,18.2],
+
+
+    'HousePrice':[24.0,21.6,34.7,18.9,30.5,12.0,19.5,17.2,5.0,22.8,50.0,20.0]
+}
+
+
+df = pd.DataFrame(data)
+
+
+# Save dataset as CSV
+df.to_csv("housing_custom.csv", index=False)
+
+
+print("CSV Created Successfully")
+
+
+# Display dataset
+print(df)
+STUDENT
+STUDENT
+
+
+import pandas as pd
+import numpy as np
+
+
+data = {
+
+
+    'Student_ID':[101,102,103,104,105,106,107,108,109,110,111,112],
+
+
+    'Name':[
+        'Amit','Priya','Rahul','Sneha','Karan',
+        'Pooja','Riya','Arjun','Neha','Vikas',
+        'Tanvi','Rohit'
+    ],
+
+
+    'Gender':[
+        'Male','Female','Male','Female','Male',
+        'Female','Female','Male','Female','Male',
+        'Female','Male'
+    ],
+
+
+    'Maths':[
+        78,85,np.nan,92,35,
+        88,76,95,500,67,
+        81,59
+    ],
+
+
+    'Science':[
+        72,90,81,95,40,
+        np.nan,79,98,85,65,
+        88,70
+    ],
+
+
+    'English':[
+        70,82,75,91,38,
+        87,74,96,89,-20,
+        84,66
+    ],
+
+
+    'Attendance':[
+        85,90,88,95,60,
+        92,np.nan,97,93,80,
+        89,75
+    ]
+}
+
+
+df = pd.DataFrame(data)
+
+
+# Save dataset as CSV
+df.to_csv("student_performance.csv", index=False)
+
+
+print("CSV Created Successfully")
+
+
+# Display dataset
+print(df)
+TITANIC
+TITANIC
+
+
+import pandas as pd
+
+
+data = {
+
+
+    'PassengerId':[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+
+
+    'Survived':[0,1,1,1,0,1,0,1,0,1,1,1,0,1,0],
+
+
+    'Pclass':[3,1,2,1,3,2,1,3,2,3,3,1,3,1,3],
+
+
+    'Name':[
+        'Aarav','Siya','Rohan','Anaya','Vivaan',
+        'Kiara','Arjun','Meera','Kabir','Ishita',
+        'Aditya','Sneha','Yash','Pooja','Neel'
+    ],
+
+
+    'Sex':[
+        'male','Female','male','female','Male',
+        'female','male','female','male','female',
+        'male','female','male','female','male'
+    ],
+
+
+    'Age':[
+        22,38,26,35,35,
+        None,54,2,27,14,
+        4,58,120,39,None
+    ],
+
+
+    'Fare':[
+        2500,7200,3100,8000,2700,
+        6500,9000,1500,3200,None,
+        1800,9500,2400,7600,2600
+    ],
+
+
+    'Embarked':[
+        'S','C','Q','S','S',
+        'C','S','Q',None,'S',
+        'C','S','Q','S','C'
+    ]
+}
+
+
+df = pd.DataFrame(data)
+
+
+# Save dataset as CSV
+df.to_csv("titanic_custom.csv", index=False)
+
+
+print("CSV Created Successfully")
+
+
+# Display dataset
+print(df)
+SOCIAL NETWORK ADS
+SOCIAL NETWORK ADS
+
+
+import pandas as pd
+import numpy as np
+
+
+data = {
+
+
+    'UserID':[101,102,103,104,105,106,107,108,109,110,111,112],
+
+
+    'Gender':[
+        'Male','Female','Female','Male','Female',
+        'Male','Female','Male','Female','Male',
+        'female','Male'
+    ],
+
+
+    'Age':[19,35,26,27,45,46,30,52,23,np.nan,41,60],
+
+
+    'EstimatedSalary':[
+        19000,20000,43000,57000,80000,
+        52000,58000,90000,25000,150000,
+        np.nan,200000
+    ],
+
+
+    'Purchased':[0,0,0,1,1,1,0,1,0,1,0,1]
+}
+
+
+df = pd.DataFrame(data)
+
+
+# Save dataset as CSV
+df.to_csv("social_ads_custom.csv", index=False)
+
+
+print("CSV Created Successfully")
+
+
+# Display dataset
+print(df)
+Tab 7
+Hadoop wordcount
+
+
+
+
+Without hadoop
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class WordCountSimple {
+    public static void main(String[] args) {
+
+
+        String text = "hello world hello hadoop world";
+
+
+        String[] words = text.split(" ");
+
+
+        HashMap<String, Integer> wordCount = new HashMap<>();
+
+
+        for (String word : words) {
+            if (wordCount.containsKey(word)) {
+                wordCount.put(word, wordCount.get(word) + 1);
+            } else {
+                wordCount.put(word, 1);
+            }
+        }
+
+
+        System.out.println("Word Count:");
+        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+    }
+}
+
+
+With hadoop
+
+
+
+
+mapper class :
+
+
+import java.io.IOException;
+import org.apache.hadoop.io.*;
+import org.apache.hadoop.mapreduce.Mapper;
+
+
+public class WordMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+
+
+    private final static IntWritable one = new IntWritable(1);
+    private Text word = new Text();
+
+
+    public void map(LongWritable key, Text value, Context context)
+            throws IOException, InterruptedException {
+
+
+        String line = value.toString();
+        String[] words = line.split(" ");
+
+
+        for (String w : words) {
+            word.set(w);
+            context.write(word, one);
+        }
+    }
+}
+
+
+Reducer Class
+
+
+import java.io.IOException;
+import org.apache.hadoop.io.*;
+import org.apache.hadoop.mapreduce.Reducer;
+
+
+public class WordReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+
+
+    public void reduce(Text key, Iterable<IntWritable> values, Context context)
+            throws IOException, InterruptedException {
+
+
+        int sum = 0;
+
+
+        for (IntWritable val : values) {
+            sum += val.get();
+        }
+
+
+        context.write(key, new IntWritable(sum));
+    }
+}
+
+
+Driver Class
+
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.*;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+
+public class WordCountDriver {
+
+
+    public static void main(String[] args) throws Exception {
+
+
+        Configuration conf = new Configuration();
+        Job job = Job.getInstance(conf, "Word Count");
+
+
+        job.setJarByClass(WordCountDriver.class);
+
+
+        job.setMapperClass(WordMapper.class);
+        job.setReducerClass(WordReducer.class);
+
+
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(IntWritable.class);
+
+
+        FileInputFormat.addInputPath(job, new Path("input.txt"));
+        FileOutputFormat.setOutputPath(job, new Path("output"));
+
+
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
+    }
+}
+
+
+
+
+How to Run Hadoop Version (Linux)
+Step 1: Create input file
+
+
+nano input.txt
+
+
+Example:
+
+
+hello world hello hadoop
+
+
+Step 2: Compile
+
+
+javac -classpath `hadoop classpath` *.java
+
+
+Step 3: Create jar
+
+
+jar cf wordcount.jar *.class
+
+
+Step 4: Run
+
+
+hadoop jar wordcount.jar WordCountDriver input.txt output
+
+
+Step 5: View Output
+
+
+cat output/part-r-00000
